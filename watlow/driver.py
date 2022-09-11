@@ -145,9 +145,9 @@ class TemperatureController(object):
         value = match.group(1)
         # From docstring, `checksum = match.group(2)` could be added and checked.
         temperature = f_to_c(struct.unpack('>f', unhexlify(value))[0])
-        if temperature < 0 or temperature > 250:
-            print("TEMP OUT OF RANGE")
-            return self._write_and_read(request, length, check, retries-1)
+        #if temperature < 0 or temperature > 250:
+            #print("TEMP OUT OF RANGE")
+            #return self._write_and_read(request, length, check, retries-1)
         return temperature
 
 
