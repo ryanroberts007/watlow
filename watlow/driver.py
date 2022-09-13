@@ -87,8 +87,9 @@ class TemperatureController(object):
 
     def close(self):
         """Close the serial connection. Use on cleanup."""
-        self.connection.flush()
-        self.connection.close()
+        if self.connection.is_open:
+            self.connection.flush()
+            self.connection.close()
 
     def get(self):
         """Get the current temperature and setpoint, in C."""

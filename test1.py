@@ -7,7 +7,7 @@ try:
         try:
             print(tc.get())
         except IOError as e:
-            print('disconnected')
+            # print('disconnected')
             print(e)
         sleep(1)
 except KeyboardInterrupt:
