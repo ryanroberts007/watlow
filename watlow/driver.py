@@ -104,7 +104,7 @@ class TemperatureController(object):
 
     def set(self, setpoint):
         """Set the setpoint temperature, in C."""
-        body = self.commands['set']['body'] + struct.pack('>f', c_to_f(setpoint))
+        body = self.commands['set']['body'] + struct.pack('>f', setpoint)
         checksum = struct.pack('<H', ~crc(body) & 0xffff)
         response = self._write_and_read(
             request=self.commands['set']['header'] + body + checksum,
