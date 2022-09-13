@@ -140,7 +140,7 @@ class TemperatureController(object):
             return self._write_and_read(request, length, check, retries-1)
         match = check.match(bytes.hex(response))
         if not match:
-            print("NOT MATCH")
+            # print("NOT MATCH")
             return self._write_and_read(request, length, check, retries-1)
         value = match.group(1)
         # From docstring, `checksum = match.group(2)` could be added and checked.
