@@ -20,7 +20,7 @@ def main(argv):
         tc = watlow.TemperatureController('/dev/ttyUSB0')
         try:
             try:
-                tc.set(setpoint)
+                tc.set(int(setpoint))
             except IOError as e:
                 print(e)
         except KeyboardInterrupt:
